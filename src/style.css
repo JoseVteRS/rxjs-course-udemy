@@ -1,25 +1,28 @@
+body {
+  background-color: #2c3e50;
+}
 #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: rgb(123, 131, 148);
+  margin-top: 60px;
 }
 
 img {
-    border-radius: 5px;
+  border-radius: 5px;
 }
 
 ol {
-    text-align: left;
+  text-align: left;
 }
 
 .progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 5px;
-    width: 0%;
-    background-color: #9034aa;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 0%;
+  background-color: #9034aa;
 }

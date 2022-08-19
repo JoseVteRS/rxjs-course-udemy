@@ -1,27 +1,21 @@
-import { from, of } from "rxjs";
-import { distinct, distinctUntilChanged } from "rxjs/operators";
+import { ajax } from "rxjs/ajax";
 
-const numeros$ = of(1, 1, 1, 3, 3, 2, 2, 4, 5, 6, 6, 4, 1);
+const url = "https://httpbin.org/delay/1";
 
-numeros$.pipe(distinctUntilChanged()).subscribe(console.log);
+// ajax
+//   .delete(url, {
+//     "Mi-Token": "ABC1234",
+//   })
+//   .subscribe(console.log);
 
-interface Personaje {
-  nombre: string;
-}
-
-const personajes: Personaje[] = [
-  { nombre: "Megaman" },
-  { nombre: "Megaman" },
-  { nombre: "X" },
-  { nombre: "Zero" },
-  { nombre: "Dr. Willy" },
-  { nombre: "X" },
-  { nombre: "X" },
-  { nombre: "Megaman" },
-  { nombre: "Zero" },
-  { nombre: "X" },
-];
-
-from(personajes)
-  .pipe(distinctUntilChanged((ant, act) => ant.nombre === act.nombre))
-  .subscribe(console.log);
+ajax({
+  url,
+  method: "POST",
+  headers: {
+    "mi-token": "ABC123",
+  },
+  body: {
+    id: 1,
+    nombre: "Jose",
+  },
+}).subscribe(console.log);
